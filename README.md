@@ -1,4 +1,3 @@
-## Start a new project.
+Atelier Lermechin
 
-1. Fork this repo
-1. Rename-it then clone it on your computer
+v0 : Landing page
