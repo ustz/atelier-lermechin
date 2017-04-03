@@ -113,7 +113,7 @@
 		// triggers winodw scroll for refresh
 		nc.window.trigger('scroll');
 	};
-	
+
 	/*----------  SET-ID  ----------*/
 	nc.setId = function (obj, prefix, n) {
 		'use strict';
@@ -153,7 +153,7 @@
 	/*----------  MOBILE-MENU  ----------*/
 	nc.mobmenu = function (el) {
 		'use strict';
-		
+
 		$(el).on("click", function (e) {
 			var nav = $(this).attr('data-nav');
 			var c = $(this).attr('data-navclose');
@@ -281,7 +281,7 @@
 
 					onInitialized: function () {
 						owlEle.animate({ opacity: 1 }, 300);
-						
+
 						// Align arrows
 						owlEle.find('.owl-nav').css({
 							top: owlEle.find('.owl-stage-outer').outerHeight() / 2
@@ -496,10 +496,10 @@
 			email: { email: "Please, enter a valid email" }
 		},
 		subscribe_successMsg: "You are in list. We will inform you as soon as we finish.",
-		form_successMsg: "Thank you for contact us. We will contact you as soon as possible.",
+		form_successMsg: "Merci pour votre message. Nous vous contacterons dès que possible.",
 
 		successMsg: "",
-		errorMsg: "Oops! Looks like something went wrong. Please try again later."
+		errorMsg: "Oups! Looks like something went wrong. Please try again later."
 	}
 
 	nc.formVaidate = function (obj) {
@@ -944,7 +944,7 @@
 		var newO = $(obj+" .animated");
 
 		for (var i = 0; i < newO.length; i++) {
-			var animateobj = $(newO[i]), 
+			var animateobj = $(newO[i]),
 				animateOut = animateobj.attr('data-animOut'),
 				animateIn = animateobj.attr('data-animIn');
 
@@ -960,12 +960,12 @@
 					animatedelayin = typeof animatearrin == 'object' ? animatearrin[1] : 0;
 				}
 
-				
+
 				animateobj.css({
 					'-webkit-animation-delay' : animatedelayout+'s',
 					'animation-delay' : animatedelayout+'s'
 				});
-				
+
 				animateobj.removeClass(animateclassout).removeClass(animateclassin).addClass(animateclassout);
 			}
 
@@ -977,30 +977,30 @@
 		'use strict';
 
 		var newO = $(obj+" .animated");
-		
+
 		for (var i = 0; i < newO.length; i++) {
-			var animateobj = $(newO[i]), 
+			var animateobj = $(newO[i]),
 				animateOut = animateobj.attr('data-animOut'),
 				animateIn = animateobj.attr('data-animIn');
-			
+
 			if (animateOut || animateIn) {
 				if(animateOut){
 					var animatearrout = animateOut.indexOf('|') > -1 ? animateOut.split('|') : animateOut,
 					animateclassout = typeof animatearrout == 'object' ? animatearrout[0] : animatearrout,
-					animatedelayout = typeof animatearrout == 'object' ? animatearrout[1] : 0;	
+					animatedelayout = typeof animatearrout == 'object' ? animatearrout[1] : 0;
 				}
 
 				if(animateIn){
 					var	animatearrin = animateIn.indexOf('|') > -1 ? animateIn.split('|') : animatearrouteIn,
 					animateclassin = typeof animatearrin == 'object' ? animatearrin[0] : animatearrin,
-					animatedelayin = typeof animatearrin == 'object' ? animatearrin[1] : 0;	
+					animatedelayin = typeof animatearrin == 'object' ? animatearrin[1] : 0;
 				}
 
 				animateobj.css({
 					'-webkit-animation-delay' : animatedelayin+'s',
 					'animation-delay' : animatedelayin+'s'
 				});
-				
+
 				animateobj.removeClass(animateclassin).removeClass(animateclassout).addClass(animateclassin);
 			}
 
@@ -1064,14 +1064,14 @@
 			enquire.register("screen and (min-width: 992px)", {
 				match : function() {
 					nc.device = 'd';
-				},  
+				},
 				unmatch : function() { }
 			}).register("(min-width: 200px) and (max-width: 991px)", {
 				match : function() {
 					nc.device = 'm';
 					$('.nav-transparent').removeClass('nav-transparent');
 					$(".nav-wrp").removeClass('show-above').removeClass('bg-glass');
-				},  
+				},
 				unmatch : function() {
 					$('.nav-wrp').attr('data-glass') === 'y' ? $('.nav-wrp').addClass('bg-glass') : null;
 					$('.nav-wrp').attr('data-above') === 'y' ? $('.nav-wrp').addClass('show-above') : null;
@@ -1096,7 +1096,7 @@
 					}
 
 					if(pageObj.pageType == "nc-onepage"){
-						
+
 						$(pageObj.homePage).removeClass("nc-active");
 						$(pageObj.onePage).addClass("nc-active");
 					}
@@ -1108,10 +1108,10 @@
 					$(pageObj.closeButton).on("click", function() {
 						$(".nc-other-section").removeClass("nc-active");
 
-						setTimeout(function() { 
+						setTimeout(function() {
 							$(pageObj.homePage).addClass("nc-active");
 						}, 100);
-						
+
 					});
 				});
 			};
@@ -1185,7 +1185,7 @@
 				$(".main-container section").each(function (index, el) {
 					$(this).attr('id', nc.uid());
 				});
-			}	
+			}
 
 			/*----------  PARALLAX  ----------*/
 			if ($o.elparallax) {
@@ -1198,7 +1198,7 @@
 				for (var i = 0; i < $o.stellar.length; i++) {
 					$($o.stellar[i]).parent().css({ overflow: 'hidden' });
 				}
-				
+
 
 				$.stellar({
 					positionProperty: 'transform',
@@ -1354,7 +1354,7 @@
 						nc.videoBg($o.videobg[i]);
 					}
 				});
-				
+
 			};
 
 			/*----------  HOSTED VIDEO  ----------*/
