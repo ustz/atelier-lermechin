@@ -5,13 +5,13 @@ if ($_POST['formtype'] == 'table-booking') {
 	$phone         = $_POST['phone'];
 	$date          = $_POST['date'];
 	$people        = $_POST['people'];
-	
+
 	echo $name;
 	echo $email_address;
 	echo $phone;
 	echo $date;
 	echo $people;
-	$to            = 'jayesh.kava007@gmail.com'; //Just write your email
+	$to            = 'schwartzulysse@gmail.com'; //Just write your email
 	$email_subject = "Booking form submitted by:  $name";
 	$email_body    = "You have received a new message. <br/>".
 				  	 "Here are the details: <br/><br/> Name: $name <br/><br/>".
@@ -28,12 +28,12 @@ if ($_POST['formtype'] == 'table-booking') {
 	$email_address = $_POST['email'];
 	$phone         = $_POST['phone'];
 	$treatment     = $_POST['treatment'];
-	
+
 	echo $name;
 	echo $email_address;
 	echo $phone;
 	echo $treatment;
-	$to            = 'jayesh.kava007@gmail.com'; //Just write your email
+	$to            = 'schwartzulysse@gmail.com'; //Just write your email
 	$email_subject = "Appointment form submitted by:  $name";
 	$email_body    = "You have received a new message. <br/>".
 				  	 "Here are the details: <br/><br/> Name: $name <br/><br/>".
@@ -53,7 +53,7 @@ if ($_POST['formtype'] == 'table-booking') {
 	echo $name;
 	echo $email_address;
 	echo $message;
-	$to = 'jayesh.kava007@gmail.com'; //Just write your email
+	$to = 'schwartzulysse@gmail.com'; //Just write your email
 	$email_subject = "Contact form submitted by:  $name";
 	$email_body = "You have received a new message. <br/>".
 				  "Here are the details: <br/><br/> Name: $name <br/><br/>".
@@ -64,7 +64,7 @@ if ($_POST['formtype'] == 'table-booking') {
 		mail($to,$email_subject,$email_body,$headers);
 		return true;
 	}
-}	
+}
 
 
 ?>
