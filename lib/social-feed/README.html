@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- For Bootstrap responsiveness -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>The Middleman</title>
+
+    <link href="../../stylesheets/all.css" rel="stylesheet" />
+    <script src="../../javascripts/all.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- Leave those next 4 lines if you care about users using IE8 -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body class="lib lib_social-feed lib_social-feed_README">
+
+    <h1 id="social-feed">Social-feed</h1>
+
+<p>The jQuery plugin which shows user feeds from the most popular social networks.</p>
+
+<p><img alt="" src="http://habrastorage.org/files/286/85e/03e/28685e03ef2b4bdc8f7da551b339426e.png" /></p>
+
+<h2 id="demo">Demo</h2>
+
+<p>http://pavelk2.github.io/social-feed/</p>
+
+<p>Social networks supported:
+- [x] Facebook
+- [x] Instagram
+- [x] Twitter
+- [x] Google+
+- [x] VK
+- [x] Pinterest
+- [x] RSS
+- [ ] Blogspot</p>
+
+<h2 id="installation">Installation</h2>
+<p>via http://bower.io:
+<code>
+bower install social-feed
+</code>
+or download the latest release:</p>
+
+<p>https://github.com/pavelk2/social-feed/releases
+## Getting started</p>
+
+<p>Load dependency CSS:
+```html
+<!-- Social-feed css --></p>
+<link href="bower_components/social-feed/css/jquery.socialfeed.css" rel="stylesheet" type="text/css" />
+
+<!-- font-awesome for social network icons -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+
+<p><code>
+Create a container for your feed:
+</code>html</p>
+<div class="social-feed-container"></div>
+<p><code>
+Load dependency javascript
+</code>html
+<!-- jQuery -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Codebird.js - required for TWITTER -->
+<script src="bower_components/codebird-js/codebird.js"></script>
+<!-- doT.js for rendering templates -->
+<script src="bower_components/doT/doT.min.js"></script>
+<!-- Moment.js for showing "time ago" and/or "date"-->
+<script src="bower_components/moment/min/moment.min.js"></script>
+<!-- Moment Locale to format the date to your language (eg. italian lang)-->
+<script src="bower_components/moment/locale/it.js"></script>
+<!-- Social-feed js -->
+<script src="bower_components/social-feed/js/jquery.socialfeed.js"></script>
+```
+Initialize the social-feed plugin:</p>
+
+<p>```html
+<script>
+    $(document).ready(function(){
+        $('.social-feed-container').socialfeed({
+            // INSTAGRAM
+            instagram:{
+                accounts: ['@teslamotors','#teslamotors'],  //Array: Specify a list of accounts from which to pull posts
+                limit: 2,                                    //Integer: max number of posts to load
+                client_id: 'YOUR_INSTAGRAM_CLIENT_ID'       //String: Instagram client id (optional if using access token)
+                access_token: 'YOUR_INSTAGRAM_ACCESS_TOKEN' //String: Instagram access token
+            },</script></p>
+
+<pre><code>        // GENERAL SETTINGS
+        length:400                                      //Integer: For posts with text longer than this length, show an ellipsis.
+    });
+}); &lt;/script&gt; ```
+</code></pre>
+
+<p>When you run the plugin, make sure that you have your <strong>webserver running</strong></p>
+
+<p>To alter the default post markup, edit <code>template.html</code> or pass a template string into the <code>template_html</code> parameter.</p>
+
+<h2 id="all-settings">All Settings</h2>
+
+<p>Social-feed.js supports many social networks. If you don't need or want to pull data from them all, remove the ones you don't need.</p>
+
+<p>````javascript
+$('.social-feed-container').socialfeed({
+    // FACEBOOK
+    facebook:{
+        accounts: ['@teslamotors','!teslamotors'],  //Array: Specify a list of accounts from which to pull wall posts
+        limit: 2,                                   //Integer: max number of posts to load
+        access_token: 'YOUR_FACEBOOK_ACCESS_TOKEN'  //String: "APP_ID|APP_SECRET"
+    },</p>
+
+<pre><code>// TWITTER
+twitter:{
+    accounts: ['@spacex'],                      //Array: Specify a list of accounts from which to pull tweets
+    limit: 2,                                   //Integer: max number of tweets to load
+    consumer_key: 'YOUR_CONSUMER_KEY',          //String: consumer key. make sure to have your app read-only
+    consumer_secret: 'YOUR_CONSUMER_SECRET_KEY',//String: consumer secret key. make sure to have your app read-only
+ },
+
+// VK
+vk:{
+    accounts: ['@125936523','#teslamotors'],    //Array: Specify a list of accounts from which to pull posts
+    limit: 2,                                   //Integer: max number of posts to load
+    source: 'all'                               //String: VK API post filter. Possible values: "Owner","Others","all","suggests"
+},
+
+// GOOGLEPLUS
+google:{
+     accounts: ['#teslamotors'],                //Array: Specify a list of accounts from which to pull posts
+     limit: 2,                                  //Integer: max number of posts to load
+     access_token: 'YOUR_GOOGLE_PLUS_ACCESS_TOKEN'//String: G+ access token
+ },
+
+// INSTAGRAM
+instagram:{
+    accounts: ['@teslamotors','#teslamotors'],  //Array: Specify a list of accounts from which to pull posts
+    limit: 2,                                   //Integer: max number of posts to load
+    client_id: 'YOUR_INSTAGRAM_CLIENT_ID'       //String: Instagram client id (option if using access token)
+    access_token: 'YOUR_INSTAGRAM_ACCESS_TOKEN' //String: Instagram access token
+},
+
+// PINTEREST
+
+pinterest:{
+    accounts: ['@teslamotors/model-s','@me'],   //Array: Specify a list of accounts from which to pull posts
+                                                //@me to pull your pins
+                                                //@user/board to pull pins from a user board
+    limit: 2,                                   //Integer: max number of posts to load
+    access_token: 'YOUR_PINTEREST_ACCESS_TOKEN' //String: Pinterest client id
+},
+
+// RSS
+
+rss:{
+    urls: ['http://teslapodcast.libsyn.com/rss'], //Array: Specifiy a list of rss feed from which to pull posts
+    limit: 2                                      //Integer: max number of posts to load for each url
+}
+
+// GENERAL SETTINGS
+length:400,                                     //Integer: For posts with text longer than this length, show an ellipsis.
+show_media:true,                                //Boolean: if false, doesn't display any post images
+media_min_width: 300,                           //Integer: Only get posts with images larger than this value
+update_period: 5000,                            //Integer: Number of seconds before social-feed will attempt to load new posts.
+template: "tweet.html",                         //String: Filename used to get the post template.
+template_html:                                  //String: HTML used for each post. This overrides the 'template' filename option
+'&lt;article class="twitter-post"&gt; \
+&lt;h4&gt;{{=it.author_name}}&lt;/h4&gt;&lt;p&gt;{{=it.text}}  \
+&lt;a href="{{=it.link}}" target="_blank"&gt;read more&lt;/a&gt; \
+&lt;/p&gt; \
+&lt;/article&gt;',
+date_format: "ll",                              //String: Display format of the date attribute (see http://momentjs.com/docs/#/displaying/format/)
+moderation: function(content) {                 //Function: if returns false, template will have class hidden
+    return  (content.text) ? content.text.indexOf('fuck') == -1 : true;
+},
+callback: function() {                          //Function: This is a callback function which is evoked when all the posts are collected and displayed
+    console.log("All posts collected!");
+} }); ````
+</code></pre>
+
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+  <li>http://fontawesome.io/ - for displaying icons of social networks. You can remove this dependency by editing replacing .fa icons with images in the template.</li>
+  <li>http://momentjs.com/ - for displaying time ago</li>
+  <li>http://olado.github.io/doT/ - for rendering templates</li>
+  <li>https://github.com/jublonet/codebird-js - for sending requests to Twitter</li>
+</ul>
+
+<h3 id="ordering--sorting">Ordering / sorting</h3>
+<p>Please note, when using a custom template, that the ordering mechanism depends on the <code>dt-create</code> attribute.</p>
+
+<h2 id="license">License</h2>
+<p><a href="http://mit-license.org/">MIT</a></p>
+
+<h2 id="issues">Issues</h2>
+<p>Found a bug or want a feature to be implemented?
+Please report it here https://github.com/pavelk2/social-feed/issues</p>
+
+<p>Currently working on the server side: (https://github.com/pavelk2/social-feed-server)
+## Let me know</p>
+
+<p>If you use this plugin, please <a href="mailto:pavel@kucherbaev.com">write me a short message</a> with a link to the project where you embed the plugin, and some features you want to have implemented here. It helps me to stay focused on the important issues. <em>It is not mandatory, but I really appreciate it!</em></p>
+
+<p>Do you want to become a part of the Social-feed? Write me and become an active contributor.</p>
+
+<p>Check out my other projects: http://kucherbaev.com</p>
+
+<p><a title="Bitdeli Badge" href="https://bitdeli.com/free"><img alt="Bitdeli Badge" src="https://d2weczhvl823v0.cloudfront.net/pavelk2/social-feed/trend.png" /></a></p>
+
+<p><a href="https://gitter.im/pavelk2/social-feed?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img alt="Join the chat at https://gitter.im/pavelk2/social-feed" src="https://badges.gitter.im/Join%20Chat.svg" /></a></p>
+
+
+  </body>
+</html>

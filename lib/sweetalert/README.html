@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- For Bootstrap responsiveness -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>The Middleman</title>
+
+    <link href="../../stylesheets/all.css" rel="stylesheet" />
+    <script src="../../javascripts/all.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- Leave those next 4 lines if you care about users using IE8 -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body class="lib lib_sweetalert lib_sweetalert_README">
+
+    <h1 id="sweetalert-build-statushttpstravis-ciorgt4t5sweetalertsvgbranchmasterhttpstravis-ciorgt4t5sweetalert">SweetAlert <a href="https://travis-ci.org/t4t5/sweetalert"><img alt="Build Status" src="https://travis-ci.org/t4t5/sweetalert.svg?branch=master" /></a></h1>
+
+<p>An awesome replacement for JavaScript's alert.</p>
+
+<p><img alt="A success modal" src="https://raw.github.com/t4t5/sweetalert/master/sweetalert.gif" /></p>
+
+<p><a href="http://t4t5.github.io/sweetalert">See it in action!</a></p>
+
+<p><a href="https://www.ludu.co/lesson/how-to-use-sweetalert">Learn how to use it!</a></p>
+
+<h2 id="usage">Usage</h2>
+
+<p>You can install SweetAlert through bower:</p>
+
+<p><code>bash
+bower install sweetalert
+</code></p>
+
+<p>Or through npm:</p>
+
+<p><code>bash
+npm install sweetalert
+</code></p>
+
+<p>Alternatively, download the package and reference the JavaScript and CSS files manually:</p>
+
+<p>```html
+<script src="dist/sweetalert.min.js"></script></p>
+<link rel="stylesheet" type="text/css" href="dist/sweetalert.css" />
+
+<p>```
+<strong>Note:</strong> If you're using an older version than v1.0.0, the files are <code>lib/sweet-alert.min.js</code> and <code>lib/sweet-alert.css</code></p>
+
+<h2 id="tutorial">Tutorial</h2>
+
+<p>The easiest way to get started is follow the <a href="https://www.ludu.co/lesson/how-to-use-sweetalert">SweetAlert tutorial on Ludu</a>!</p>
+
+<h2 id="examples">Examples</h2>
+
+<p>The most basic message:</p>
+
+<p><code>javascript
+swal("Hello world!");
+</code></p>
+
+<p>A message signaling an error:</p>
+
+<p><code>javascript
+swal("Oops...", "Something went wrong!", "error");
+</code></p>
+
+<p>A warning message, with a function attached to the "Confirm"-button:</p>
+
+<p><code>javascript
+swal({
+  title: "Are you sure?",
+  text: "You will not be able to recover this imaginary file!",
+  type: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#DD6B55",
+  confirmButtonText: "Yes, delete it!",
+  closeOnConfirm: false,
+  html: false
+}, function(){
+  swal("Deleted!",
+  "Your imaginary file has been deleted.",
+  "success");
+});
+</code></p>
+
+<p>A prompt modal where the user's input is logged:</p>
+
+<p><code>javascript
+swal({
+  title: "An input!",
+  text: 'Write something interesting:',
+  type: 'input',
+  showCancelButton: true,
+  closeOnConfirm: false,
+  animation: "slide-from-top"
+}, function(inputValue){
+  console.log("You wrote", inputValue);
+});
+</code></p>
+
+<p>Ajax request example:</p>
+
+<p><code>javascript
+swal({
+  title: 'Ajax request example',
+  text: 'Submit to run ajax request',
+  type: 'info',
+  showCancelButton: true,
+  closeOnConfirm: false,
+  disableButtonsOnConfirm: true,
+  confirmLoadingButtonColor: '#DD6B55'
+}, function(inputValue){
+  setTimeout(function() {
+    swal('Ajax request finished!');
+  }, 2000);
+});
+</code></p>
+
+<p><a href="http://t4t5.github.io/sweetalert">View more examples</a></p>
+
+<h2 id="themes">Themes</h2>
+
+<p>SweetAlert can easily be themed to fit your site's design. SweetAlert comes with three example themes that you can try out: <strong>facebook</strong>, <strong>twitter</strong> and <strong>google</strong>. They can be referenced right after the intial sweetalert-CSS:
+```html</p>
+<link rel="stylesheet" href="dist/sweetalert.css" />
+
+<link rel="stylesheet" href="themes/twitter/twitter.css" />
+
+<p>```</p>
+
+<h2 id="browser-compatibility">Browser compatibility</h2>
+
+<p>SweetAlert works in most major browsers (yes, even IE). Some details:</p>
+
+<ul>
+  <li><strong>IE8</strong>: (Dropped since v1.0.0-beta)</li>
+  <li><strong>IE9</strong>: Works, but icons are not animated.</li>
+  <li><strong>IE10+</strong>: Works!</li>
+  <li><strong>Safari 4+</strong>: Works!</li>
+  <li><strong>Firefox 3+</strong>: Works!</li>
+  <li><strong>Chrome 14+</strong>: Works!</li>
+  <li><strong>Opera 15+</strong>: Works!</li>
+</ul>
+
+<h2 id="contributing">Contributing</h2>
+
+<p>If you want to contribute:</p>
+
+<ul>
+  <li>
+    <p>Fork the repo</p>
+  </li>
+  <li>
+    <p>Make sure you have <a href="http://nodejs.org/">Node</a>, <a href="https://www.npmjs.com/">NPM</a> and <a href="http://gulpjs.com/">Gulp</a> installed. When in the SweetAlert directory, run <code>npm install</code> to install the dependencies. Then run <code>gulp</code> while working to automatically minify the SCSS and JS-files.</p>
+  </li>
+  <li>
+    <p>Keep in mind that SweetAlert uses Browserify in order to compile ES6-files. For easy debugging, make sure you reference the file <code>dist/sweetalert-dev.js</code> instead of <code>sweetalert.js</code>.</p>
+  </li>
+  <li>
+    <p>After you're done, make a pull request and wait for approval! :)</p>
+  </li>
+</ul>
+
+<h2 id="related-projects">Related projects</h2>
+
+<ul>
+  <li><a href="https://github.com/pedant/sweet-alert-dialog">SweetAlert for Android</a></li>
+  <li><a href="https://github.com/lipis/bootstrap-sweetalert">SweetAlert for Bootstrap</a></li>
+  <li><a href="https://github.com/oitozero/ngSweetAlert">SweetAlert for AngularJS</a></li>
+  <li><a href="https://github.com/sharshenov/sweetalert-rails">SweetAlert for RubyOnRails</a></li>
+</ul>
+
+
+  </body>
+</html>
